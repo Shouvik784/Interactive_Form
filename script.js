@@ -191,8 +191,8 @@ function setupEventListeners() {
                 name: nameInput.value.trim(),
                 email: emailInput.value.trim(),
                 phone: phoneInput.value.trim(),
-                password: passwordInput.value // In a real app, never log passwords in production
-            });
+                password: passwordInput.value
+});
             
             showSuccessMessage();
             form.reset();
