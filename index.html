@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive form with real-time validation">
+    <title>Interactive Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" class="form" novalidate>
+            <h1>Create Account</h1>
+            
+            <!-- Name Field -->
+            <div class="form-group">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Full Name" 
+                        required
+                        minlength="3"
+                        maxlength="50"
+                    >
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="error-message" id="nameError"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Email Address" 
+                        required
+                    >
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="Phone Number" 
+                        pattern="[0-9]{10}"
+                        required
+                    >
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="error-message" id="phoneError"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        required
+                        minlength="8"
+                    >
+                    <i class="fas fa-lock"></i>
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="far fa-eye"></i>
+                    </button>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-meter">
+                        <div class="strength-meter-fill" data-strength="0"></div>
+                    </div>
+                    <div class="strength-text">Password Strength: <span>Weak</span></div>
+                </div>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="Confirm Password" 
+                        required
+                    >
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
+            <div id="successMessage" class="success-message"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
